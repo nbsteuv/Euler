@@ -1,0 +1,14 @@
+{
+  "name": "Euler",
+  "version": "1.0.0",
+  "description": "A place to keep practice code",
+  "main": "euler",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Nick Steuver",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
