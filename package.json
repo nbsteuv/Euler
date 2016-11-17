@@ -4,7 +4,8 @@
   "description": "A place to keep practice code",
   "main": "euler",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "karma start"
   },
   "author": "Nick Steuver",
   "license": "ISC",
