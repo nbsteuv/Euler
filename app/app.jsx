@@ -15,7 +15,7 @@ ReactDOM.render(
     <Router history={hashHistory}>
       <Route path="/" component={Main}>
         <IndexRoute component={Exercise} />
-        <Route path="/test" component={Test} />
+        <Route path="test" component={Test} />
       </Route>
     </Router>,
   document.getElementById('app')
