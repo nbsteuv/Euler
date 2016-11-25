@@ -2,7 +2,7 @@ var React = require('react');
 
 var Test = React.createClass({
   render: function(){
-    return(
+    return (
       <div>
         <p>Test test</p>
       </div>
