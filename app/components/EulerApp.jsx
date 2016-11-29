@@ -2,7 +2,7 @@ var React = require('react');
 
 var Nav = require('Nav');
 
-var Main = (props) => {
+var EulerApp = (props) => {
   return (
     <div>
       <Nav />
@@ -15,4 +15,4 @@ var Main = (props) => {
    );
 }
 
-module.exports = Main;
+module.exports = EulerApp;
