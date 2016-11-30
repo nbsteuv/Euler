@@ -9,8 +9,8 @@ var state = store.getState();
 console.log(state);
 
 var EulerApp = require('EulerApp');
-var Exercise = require('Exercise');
-var Test = require('Test');
+import Exercise from 'Exercise';
+import Test from 'Test';
 
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
