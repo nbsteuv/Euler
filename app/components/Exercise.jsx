@@ -1,13 +1,14 @@
 var React = require('react');
 var {connect} = require('react-redux');
 
+import SelectBy from 'SelectBy';
+
 export var Exercise = React.createClass({
   render: function(){
-    var {problems, languages} = this.props;
-    console.log(problems);
+    var {problems, languages, selectBy, selectedProblem, selectedLanguage, selectByOptions} = this.props;
     return (
       <div>
-        <p>Exercise test</p>
+        <SelectBy />
       </div>
     );
   }
