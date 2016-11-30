@@ -31,7 +31,6 @@ export var configure = (initialState = {
   		languages: ['php', 'javascript', 'csharp']
   	},
   ],
-
   languages: [
   	{
   		name: 'php',
@@ -48,7 +47,11 @@ export var configure = (initialState = {
   		displayName: 'C#',
   		imageFile: 'path/to/languageLogo/csharp'
   	}
-  ]
+  ],
+  selectBy: 'Problem',
+  selectedProblem: undefined,
+	selectedLanguage: undefined,
+	selectByOptions: ['Problem', 'Language'],
 }) => {
 
   var reducer = (state = initialState, action) => {
