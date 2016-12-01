@@ -7,7 +7,7 @@ export var SelectBy = React.createClass({
     var renderOptions = () => {
       return selectByOptions.map((option) => {
         return <span key={option} onClick={() => {console.log(option)}}><input type="radio" name="selectBy" value={option} defaultChecked={option == selectBy} /> Select By {option}<br /></span>;
-      })
+      });
     }
     return (
       <div>

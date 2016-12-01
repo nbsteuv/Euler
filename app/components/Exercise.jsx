@@ -2,6 +2,7 @@ var React = require('react');
 var {connect} = require('react-redux');
 
 import SelectBy from 'SelectBy';
+import ProblemSelector from 'ProblemSelector';
 
 export var Exercise = React.createClass({
   render: function(){
@@ -9,6 +10,7 @@ export var Exercise = React.createClass({
     return (
       <div>
         <SelectBy />
+        <ProblemSelector problemList={problems} />
       </div>
     );
   }
