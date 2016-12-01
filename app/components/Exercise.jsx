@@ -3,6 +3,7 @@ var {connect} = require('react-redux');
 
 import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
+import LanguageSelector from 'LanguageSelector';
 
 export var Exercise = React.createClass({
   render: function(){
@@ -11,6 +12,7 @@ export var Exercise = React.createClass({
       <div>
         <SelectBy />
         <ProblemSelector problemList={problems} />
+        <LanguageSelector languageList={languages} />
       </div>
     );
   }
