@@ -35,17 +35,17 @@ export var configure = (initialState = {
   	{
   		name: 'php',
   		displayName: 'PHP',
-  		imageFile: 'path/to/languageLogo/php'
+  		imageFile: '/images/languages/php.jpg'
   	},
   	{
   		name: 'javascript',
   		displayName: 'JavaScript',
-  		imageFile: 'path/to/languageLogo/javascript'
+  		imageFile: '/images/languages/js.jpg'
   	},
   	{
   		name: 'csharp',
   		displayName: 'C#',
-  		imageFile: 'path/to/languageLogo/csharp'
+  		imageFile: '/images/languages/csharp.jpg'
   	}
   ],
   selectBy: 'Problem',
