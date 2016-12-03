@@ -7,6 +7,7 @@ var TestUtils = require('react-addons-test-utils');
 import Exercise from 'Exercise';
 import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
+import LanguageSelector from 'LanguageSelector';
 
 import {configure} from 'configureStore';
 
@@ -38,5 +39,16 @@ describe('Exercise', () => {
       var problemSelector = TestUtils.scryRenderedComponentsWithType(exercise, ProblemSelector);
       expect(problemSelector.length).toBe(1);
     });
+  });
+
+  it('should render LanguageSelector', () => {
+    var store = configure();
+    var exercise = TestUtils.renderIntoDocument(
+      <Provider store={store}>
+        <Exercise />
+      </Provider>
+    );
+    var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
+    expect(languageSelector.length).toBe(1);
   });
 });
