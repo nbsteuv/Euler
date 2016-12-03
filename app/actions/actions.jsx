@@ -4,3 +4,10 @@ export var setSelectBy = (selectBy) => {
     selectBy
   }
 }
+
+export var setSelectedProblem = (problemId) => {
+  return {
+    type: 'SET_SELECTED_PROBLEM',
+    problemId
+  }
+}

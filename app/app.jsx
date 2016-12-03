@@ -7,6 +7,7 @@ var store = require('configureStore').configure();
 
 store.subscribe(() => {
   var state = store.getState();
+  console.log(state);
 })
 
 var EulerApp = require('EulerApp');

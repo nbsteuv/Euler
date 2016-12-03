@@ -77,6 +77,8 @@ export var selectByOptionsReducer = (state = ['Problem', 'Language'], action) =>
 
 export var selectedProblemReducer = (state = '', action) => {
   switch(action.type){
+    case 'SET_SELECTED_PROBLEM':
+      return action.problemId;
     default:
       return state;
   }
