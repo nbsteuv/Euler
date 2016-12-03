@@ -60,7 +60,6 @@ export var languagesReducer = (state = [
 export var selectByReducer = (state = 'Problem', action) => {
   switch(action.type){
     case 'SET_SELECTBY':
-      console.log('selecting by ' + action.selectBy);
       return action.selectBy;
     default:
       return state;

@@ -5,8 +5,9 @@ var {Provider} = require('react-redux');
 
 var store = require('configureStore').configure();
 
-var state = store.getState();
-console.log(state);
+store.subscribe(() => {
+  var state = store.getState();
+})
 
 var EulerApp = require('EulerApp');
 import Exercise from 'Exercise';
