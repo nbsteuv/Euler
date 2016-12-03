@@ -3,10 +3,11 @@ var {connect} = require('react-redux');
 
 export var LanguageSelector = React.createClass({
   render: function(){
-    var {languageList, dispatch} = this.props;
+    var {languageList, selectedLanguage, dispatch} = this.props;
     var renderLanguageList = function(){
       return languageList.map((language) => {
-        return <span key={language.name} className="language-logo" style={
+        var className = language.name == selectedLanguage ? 'language-logo language-active' : 'language-logo';
+        return <span key={language.name} className={className} style={
             {
               backgroundImage: 'url(' + language.imageFile + ')',
               backgroundSize: '100%',
