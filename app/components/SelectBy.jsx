@@ -3,6 +3,8 @@ var {connect} = require('react-redux');
 
 var actions = require('actions');
 
+//TODO: fix Failed form proptype warning--add onChange or make readOnly
+
 export var SelectBy = React.createClass({
   render: function(){
     var {selectByOptions, selectBy, dispatch} = this.props;
@@ -13,9 +15,7 @@ export var SelectBy = React.createClass({
     }
     return (
       <div>
-        <form>
           { renderOptions() }
-        </form>
       </div>
     );
   }
