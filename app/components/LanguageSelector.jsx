@@ -6,7 +6,14 @@ export var LanguageSelector = React.createClass({
     var {languageList, dispatch} = this.props;
     var renderLanguageList = function(){
       return languageList.map((language) => {
-        return <img key={language.name} src={language.imageFile} />
+        return <span key={language.name} className="language-logo" style={
+            {
+              backgroundImage: 'url(' + language.imageFile + ')',
+              backgroundSize: '100%',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat'
+            }
+          }></span>
       });
     }
     return (
