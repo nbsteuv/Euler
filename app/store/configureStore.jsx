@@ -7,8 +7,10 @@ export var configure = () => {
     problems: problemsReducer,
     languages: languagesReducer,
     selectBy: selectByReducer,
-    selectByOptions: selectByOptionsReducer
-  })
+    selectByOptions: selectByOptionsReducer,
+    selectedProblem: selectedProblemReducer,
+    selectedLanguage: selectedLanguageReducer
+  });
 
   var store = redux.createStore(reducer);
 

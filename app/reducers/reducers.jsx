@@ -74,3 +74,17 @@ export var selectByOptionsReducer = (state = ['Problem', 'Language'], action) =>
       return state;
   }
 }
+
+export var selectedProblemReducer = (state = '', action) => {
+  switch(action.type){
+    default:
+      return state;
+  }
+}
+
+export var selectedLanguageReducer = (state = '', action) => {
+  switch(action.type){
+    default:
+      return state;
+  }
+}
