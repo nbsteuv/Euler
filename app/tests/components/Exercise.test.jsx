@@ -4,8 +4,9 @@ var expect = require('expect');
 var {Provider} = require('react-redux');
 var TestUtils = require('react-addons-test-utils');
 
-import Exercise from 'Exercise';
+import ConnectedExercise, {Exercise} from 'Exercise';
 import SelectBy from 'SelectBy';
+
 import {configure} from 'configureStore';
 
 describe('Exercise', () => {
@@ -19,7 +20,7 @@ describe('Exercise', () => {
       var store = configure();
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <Exercise />
+          <ConnectedExercise />
         </Provider>
       );
       var selectBy = TestUtils.scryRenderedComponentsWithType(exercise, SelectBy);
