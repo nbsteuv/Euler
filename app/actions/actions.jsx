@@ -11,3 +11,10 @@ export var setSelectedProblem = (problemId) => {
     problemId
   }
 }
+
+export var setSelectedLanguage = (languageName) => {
+  return {
+    type: 'SET_SELECTED_LANGUAGE',
+    languageName
+  }
+}

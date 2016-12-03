@@ -1,6 +1,8 @@
 var React = require('react');
 var {connect} = require('react-redux');
 
+var actions = require('actions');
+
 export var LanguageSelector = React.createClass({
   render: function(){
     var {languageList, selectedLanguage, dispatch} = this.props;
@@ -14,7 +16,9 @@ export var LanguageSelector = React.createClass({
               backgroundPosition: 'center center',
               backgroundRepeat: 'no-repeat'
             }
-          }></span>
+          } onClick={() => {
+            dispatch(actions.setSelectedLanguage(language.name));
+          }}></span>
       });
     }
     return (
