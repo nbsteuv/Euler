@@ -1,3 +1,5 @@
+//TODO: write tests for reducers
+
 export var problemsReducer = (state = [
   {
     id: 1,
