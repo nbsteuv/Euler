@@ -11,7 +11,7 @@ export var Exercise = React.createClass({
     return (
       <div>
         <SelectBy />
-        <ProblemSelector problemList={problems} />
+        <ProblemSelector problemList={problems} selectedProblem={selectedProblem} />
         <LanguageSelector languageList={languages} selectedLanguage={selectedLanguage}/>
       </div>
     );

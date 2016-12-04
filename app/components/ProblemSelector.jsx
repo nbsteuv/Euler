@@ -10,7 +10,7 @@ export var ProblemSelector = React.createClass({
     dispatch(actions.setSelectedProblem(problemId));
   },
   render: function(){
-    var {problemList, dispatch} = this.props;
+    var {problemList, selectedProblem, dispatch} = this.props;
     var renderProblemList = () => {
       return problemList.map((problem) => {
         return <option key={problem.id} value={problem.id}>{problem.id}</option>
@@ -20,7 +20,8 @@ export var ProblemSelector = React.createClass({
       <div>
         <form>
           <strong>Problem Number: </strong>
-          <select onChange={this.handleSelect}>
+          <select onChange={this.handleSelect} value={selectedProblem}>
+            <option value=''>Choose a problem</option>
             { renderProblemList() }
           </select>
         </form>
