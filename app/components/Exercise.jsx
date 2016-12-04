@@ -10,8 +10,8 @@ import LanguageSelector from 'LanguageSelector';
 export var Exercise = React.createClass({
   render: function(){
     var {problems, languages, selectBy, selectedProblem, selectedLanguage, selectByOptions} = this.props;
-    var problemSelector = <ProblemSelector problemList={problems} selectedProblem={selectedProblem} />;
-    var languageSelector = <LanguageSelector languageList={languages} selectedLanguage={selectedLanguage} />
+    var problemSelector = <ProblemSelector key="problemSelector" problemList={problems} selectedProblem={selectedProblem} />;
+    var languageSelector = <LanguageSelector key="languageSelector" languageList={languages} selectedLanguage={selectedLanguage} />
     var generateSelectors = () => {
       switch(selectBy){
         case 'Problem':
