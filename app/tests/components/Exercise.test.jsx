@@ -4,7 +4,7 @@ var expect = require('expect');
 var {Provider} = require('react-redux');
 var TestUtils = require('react-addons-test-utils');
 
-import Exercise from 'Exercise';
+import ConnectedExercise from 'Exercise';
 import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
 import LanguageSelector from 'LanguageSelector';
@@ -13,7 +13,7 @@ import {configure} from 'configureStore';
 
 describe('Exercise', () => {
   it('should exist', () => {
-    expect(Exercise).toExist();
+    expect(ConnectedExercise).toExist();
   });
 
   describe('rendering', () => {
@@ -22,7 +22,7 @@ describe('Exercise', () => {
       var store = configure();
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <Exercise />
+          <ConnectedExercise />
         </Provider>
       );
       var selectBy = TestUtils.scryRenderedComponentsWithType(exercise, SelectBy);
@@ -33,7 +33,7 @@ describe('Exercise', () => {
       var store = configure();
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <Exercise />
+          <ConnectedExercise />
         </Provider>
       );
       var problemSelector = TestUtils.scryRenderedComponentsWithType(exercise, ProblemSelector);
@@ -44,7 +44,7 @@ describe('Exercise', () => {
       var store = configure();
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <Exercise />
+          <ConnectedExercise />
         </Provider>
       );
       var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
