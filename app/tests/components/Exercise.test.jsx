@@ -57,7 +57,7 @@ describe('Exercise', () => {
       });
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <ConnectedExercise selectBy='Language' />
+          <ConnectedExercise />
         </Provider>
       );
       var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
@@ -72,7 +72,7 @@ describe('Exercise', () => {
       });
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <ConnectedExercise selectBy='Language' />
+          <ConnectedExercise />
         </Provider>
       );
       var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
@@ -88,7 +88,7 @@ describe('Exercise', () => {
       });
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <ConnectedExercise selectBy='Language' />
+          <ConnectedExercise />
         </Provider>
       );
       var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
@@ -104,7 +104,7 @@ describe('Exercise', () => {
       });
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
-          <ConnectedExercise selectBy='Language' />
+          <ConnectedExercise />
         </Provider>
       );
       var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
