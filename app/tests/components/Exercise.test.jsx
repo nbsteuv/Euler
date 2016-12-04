@@ -4,7 +4,7 @@ var expect = require('expect');
 var {Provider} = require('react-redux');
 var TestUtils = require('react-addons-test-utils');
 
-import ConnectedExercise from 'Exercise';
+import ConnectedExercise, {Exercise} from 'Exercise';
 import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
 import LanguageSelector from 'LanguageSelector';
@@ -29,7 +29,7 @@ describe('Exercise', () => {
       expect(selectBy.length).toBe(1);
     });
 
-    it('should render ProblemSelector', () => {
+    it('should render ProblemSelector by default', () => {
       var store = configure();
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
@@ -40,7 +40,7 @@ describe('Exercise', () => {
       expect(problemSelector.length).toBe(1);
     });
 
-    it('should render LanguageSelector', () => {
+    it('should not render LanguageSelector by default', () => {
       var store = configure();
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
@@ -48,7 +48,7 @@ describe('Exercise', () => {
         </Provider>
       );
       var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
-      expect(languageSelector.length).toBe(1);
+      expect(languageSelector.length).toBe(0);
     });
 
   });
