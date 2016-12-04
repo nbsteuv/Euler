@@ -19,4 +19,17 @@ describe('SelectBy', () => {
     var numberOptions = $el.find('input').length;
     expect(numberOptions).toBe(3);
   });
+
+  it('should dispatch setSelectBy action on click', () => {
+    var action = {
+      type: 'SET_SELECTBY',
+      selectBy: 'Three'
+    }
+    var selectByOptions = ['One', 'Two', 'Three'];
+    var spy = expect.createSpy();
+    var selectBy = TestUtils.renderIntoDocument(<SelectBy selectByOptions={selectByOptions} dispatch={spy} />);
+    var option = TestUtils.scryRenderedDOMComponentsWithTag(selectBy, 'input')[2];
+    TestUtils.Simulate.click(option);
+    expect(spy).toHaveBeenCalledWith(action);
+  });
 });
