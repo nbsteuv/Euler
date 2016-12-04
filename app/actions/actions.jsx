@@ -1,3 +1,5 @@
+//TODO: write tests for each action to go with reducers
+
 export var setSelectBy = (selectBy) => {
   return {
     type: 'SET_SELECTBY',
