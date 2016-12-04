@@ -26,6 +26,6 @@ describe('ProblemSelector', () =>{
     var problemSelector = TestUtils.renderIntoDocument(<ProblemSelector problemList={problems} />);
     var $el = $(ReactDOM.findDOMNode(problemSelector));
     var numberProblems = $el.find('option').length;
-    expect(numberProblems).toBe(3);
+    expect(numberProblems).toBe(4);
   });
 });
