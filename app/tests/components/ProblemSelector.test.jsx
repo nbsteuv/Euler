@@ -20,12 +20,39 @@ describe('ProblemSelector', () =>{
         id: 2
       },
       {
-        id:3
+        id: 3
       }
     ];
     var problemSelector = TestUtils.renderIntoDocument(<ProblemSelector problemList={problems} />);
     var $el = $(ReactDOM.findDOMNode(problemSelector));
     var numberProblems = $el.find('option').length;
     expect(numberProblems).toBe(4);
+  });
+
+  it('should dispatch setSelectedProblem when problem is chosen', () => {
+    var action = {
+      type: 'SET_SELECTED_PROBLEM',
+      problemId: 3
+    }
+    var problems = [
+      {
+        id: 1
+      },
+      {
+        id: 2
+      },
+      {
+        id: 3
+      }
+    ];
+    var spy = expect.createSpy();
+    var problemSelector = TestUtils.renderIntoDocument(<ProblemSelector problemList={problems} dispatch={spy} />);
+    var selector = TestUtils.scryRenderedDOMComponentsWithTag(problemSelector, 'select')[0];
+    var selectorNode = ReactDOM.findDOMNode(selector);
+    // var $el = $(ReactDOM.findDOMNode(problemSelector));
+    // var selector = $el.find('select')[0];
+    console.log(selectorNode);
+    TestUtils.Simulate.change(selectorNode, {target: {value: 3}});
+    expect(spy).toHaveBeenCalledWith(action);
   });
 });
