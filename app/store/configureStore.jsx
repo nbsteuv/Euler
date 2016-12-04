@@ -1,7 +1,7 @@
 var redux = require('redux');
 var {problemsReducer, languagesReducer, selectByReducer, selectedProblemReducer, selectedLanguageReducer, selectByOptionsReducer} = require('reducers');
 
-export var configure = () => {
+export var configure = (initialState ={}) => {
 
   var reducer = redux.combineReducers({
     problems: problemsReducer,
@@ -12,7 +12,7 @@ export var configure = () => {
     selectedLanguage: selectedLanguageReducer
   });
 
-  var store = redux.createStore(reducer);
+  var store = redux.createStore(reducer, initialState);
 
   return store;
 };

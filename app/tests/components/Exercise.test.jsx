@@ -4,7 +4,7 @@ var expect = require('expect');
 var {Provider} = require('react-redux');
 var TestUtils = require('react-addons-test-utils');
 
-import ConnectedExercise, {Exercise} from 'Exercise';
+import ConnectedExercise from 'Exercise';
 import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
 import LanguageSelector from 'LanguageSelector';
@@ -51,5 +51,19 @@ describe('Exercise', () => {
       expect(languageSelector.length).toBe(0);
     });
 
+    it('should render language selector first if selectBy = Language', () => {
+      var store = configure({
+        selectBy: 'Language'
+      });
+      var exercise = TestUtils.renderIntoDocument(
+        <Provider store={store}>
+          <ConnectedExercise selectBy='Language' />
+        </Provider>
+      );
+      var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
+      var problemSelector = TestUtils.scryRenderedComponentsWithType(exercise, ProblemSelector);
+      expect(languageSelector.length).toBe(1);
+      expect(problemSelector.length).toBe(0);
+    });
   });
 });
