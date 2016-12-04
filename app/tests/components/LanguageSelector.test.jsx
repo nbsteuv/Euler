@@ -49,5 +49,30 @@ describe('LanguageSelector', () => {
     var firstSpan = $el.find('span')[0];
     var firstClass = $(firstSpan).attr('class');
     expect(firstClass).toBe('language-logo language-active');
-  })
+  });
+
+  it('should dispatch setSelectedLanguage action when language span is clicked', () => {
+    var languages = [
+      {
+        name: 'language1',
+        imageFile: 'images/language1.jpg',
+        displayName: 'Language 1'
+      },
+      {
+        name: 'language2',
+        imageFile: 'images/language2.jpg',
+        displayName: 'Language 2'
+      }
+    ];
+    var action = {
+      type: 'SET_SELECTED_LANGUAGE',
+      languageName: 'language2'
+    }
+    var spy = expect.createSpy();
+    var languageSelector = TestUtils.renderIntoDocument(<LanguageSelector languageList={languages} dispatch={spy} />);
+    var $el = $(ReactDOM.findDOMNode(languageSelector));
+    var secondSpan = $el.find('span')[1];
+    TestUtils.Simulate.click(secondSpan);
+    expect(spy).toHaveBeenCalledWith(action);
+  });
 });
