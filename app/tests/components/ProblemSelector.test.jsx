@@ -48,11 +48,7 @@ describe('ProblemSelector', () =>{
     var spy = expect.createSpy();
     var problemSelector = TestUtils.renderIntoDocument(<ProblemSelector problemList={problems} dispatch={spy} />);
     var selector = TestUtils.scryRenderedDOMComponentsWithTag(problemSelector, 'select')[0];
-    var selectorNode = ReactDOM.findDOMNode(selector);
-    // var $el = $(ReactDOM.findDOMNode(problemSelector));
-    // var selector = $el.find('select')[0];
-    console.log(selectorNode);
-    TestUtils.Simulate.change(selectorNode, {target: {value: 3}});
+    TestUtils.Simulate.change(selector, {target: {value: 3}});
     expect(spy).toHaveBeenCalledWith(action);
   });
 });
