@@ -80,5 +80,21 @@ describe('Exercise', () => {
       expect(problemSelector.length).toBe(1);
       expect(languageSelector.length).toBe(0);
     });
+
+    it('should render language selector if selectBy = Problem and problem is selected', () => {
+      var store = configure({
+        selectBy: 'Problem',
+        selectedProblem: '1775'
+      });
+      var exercise = TestUtils.renderIntoDocument(
+        <Provider store={store}>
+          <ConnectedExercise selectBy='Language' />
+        </Provider>
+      );
+      var languageSelector = TestUtils.scryRenderedComponentsWithType(exercise, LanguageSelector);
+      var problemSelector = TestUtils.scryRenderedComponentsWithType(exercise, ProblemSelector);
+      expect(problemSelector.length).toBe(1);
+      expect(languageSelector.length).toBe(1);
+    });
   });
 });
