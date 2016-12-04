@@ -5,16 +5,37 @@ import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
 import LanguageSelector from 'LanguageSelector';
 
+//TODO: abstract generateSelectors function into helper for reuse with Test component
+
 export var Exercise = React.createClass({
   render: function(){
     var {problems, languages, selectBy, selectedProblem, selectedLanguage, selectByOptions} = this.props;
     var problemSelector = <ProblemSelector problemList={problems} selectedProblem={selectedProblem} />;
     var languageSelector = <LanguageSelector languageList={languages} selectedLanguage={selectedLanguage}/>
+    var generateSelectors = () => {
+      switch(selectBy){
+        case 'Problem':
+          var selectors = [problemSelector];
+          if(selectedProblem){
+            selectors.push(languageSelector);
+          }
+          return selectors.map((selector) => {
+            return selector;
+          });
+        case 'Language':
+          var selectors = [languageSelector];
+          if(selectedLanguage){
+            selectors.push(problemSelector);
+          }
+          return selectors.map((selector) => {
+            return selector;
+          });
+      }
+    }
     return (
       <div>
         <SelectBy />
-        {problemSelector}
-        {languageSelector}
+        { generateSelectors() }
       </div>
     );
   }
