@@ -7,7 +7,7 @@ var EulerApp = (props) => {
     <div>
       <Nav />
       <div className="row">
-        <div className="columns small-centered medium-6 large-6">
+        <div className="columns small-centered medium-12 large-12">
           {props.children}
         </div>
       </div>

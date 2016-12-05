@@ -3,28 +3,28 @@
 export var problemsReducer = (state = [
   {
     id: 1,
-    imageFile: 'path/to/problem/1',
+    imageFile: '/images/problems/1.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp']
   },
   {
     id: 2,
-    imageFile: 'path/to/problem/2',
+    imageFile: '/images/problems/2.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp']
   },
   {
     id: 3,
-    imageFile: 'path/to/problem/3',
+    imageFile: '/images/problems/3.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp']
   },
   {
     id: 4,
-    imageFile: 'path/to/problem/4',
+    imageFile: '/images/problems/4.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp']
