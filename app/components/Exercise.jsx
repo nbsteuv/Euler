@@ -7,6 +7,7 @@ import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
 import LanguageSelector from 'LanguageSelector';
 var ProblemImage = require('ProblemImage');
+import CodeWindow from 'CodeWindow';
 
 //TODO: abstract generateSelectors and getProblemDetails functions into helper for reuse with Test component
 
@@ -56,10 +57,18 @@ export var Exercise = React.createClass({
           });
       }
     }
+
+    var generateCodeWindow = () => {
+      if(selectedProblem && selectedLanguage && problemDetails){
+        return <CodeWindow problem={problemDetails} />
+      }
+    }
+    
     return (
       <div>
         <SelectBy />
         { generateSelectors() }
+        { generateCodeWindow() }
       </div>
     );
   }
