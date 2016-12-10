@@ -1,11 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+
+//Javascript sandbox functions--abstract to separate class file and instantiate with Javascript module information
 var Sandbox = require('sandbox');
 var s = new Sandbox();
 
-s.run('1+1', function(output){
-	console.log(output);
-});
+function getTime(){
+	var date = new Date();
+	var time = date.getTime();
+	return time / 1000;
+}
+
+//------------------------------------------------------------
 
 var app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,8 +27,14 @@ app.use(function(req, res, next){
 });
 
 app.post('/sandbox', function(req, res){
+	var startTime = getTime();
 	s.run(req.body.code, function(output){
-		res.send(output.result);
+		var endTime = getTime();
+		var seconds = endTime - startTime;
+		res.send({
+			answer: output.result,
+			seconds: seconds
+		});
 	});
 });
 
