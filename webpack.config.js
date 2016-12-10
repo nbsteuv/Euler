@@ -1,5 +1,7 @@
 var webpack = require('webpack');
-var path = require('path')
+var path = require('path');
+
+//TODO: use path.join to be compatible with multiple systems
 
 module.exports = {
   entry: [
@@ -52,5 +54,5 @@ module.exports = {
       path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
 };
