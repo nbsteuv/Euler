@@ -10,15 +10,12 @@ require('brace/theme/monokai');
 //TODO: make mode dependent on language for highlighter
 
 var CodeSandbox = React.createClass({
-  setError: function(error){
-    this.props.setError(error);
-  },
   setCodeResults: function(answer, seconds){
     this.props.setCodeResults(answer, seconds);
   },
   handleSubmit: function(){
     var code = this.refs.codeInput.editor.getValue();
-    console.log(code);
+    console.log(code)
     axios.post('/sandbox', {
       code: code
     })
@@ -28,7 +25,6 @@ var CodeSandbox = React.createClass({
       })
       .catch((error) => {
         console.log(error);
-        this.setError(error);
       })
   },
   render: function(){
