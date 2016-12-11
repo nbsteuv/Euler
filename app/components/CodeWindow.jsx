@@ -14,11 +14,22 @@ export var CodeWindow = React.createClass({
       seconds: undefined
     }
   },
+  setError: function(error){
+    this.setState({
+      error: error
+    });
+  },
+  setCodeResults: function(answer, seconds){
+    this.setState({
+      answer: answer,
+      seconds: seconds
+    });
+  },
   render: function(){
     return (
       <div>
         <CodeInstructions />
-        <CodeSandbox />
+        <CodeSandbox setCodeResults={this.setCodeResults} setError={this.setError} />
         <CodeResult answer={this.state.answer} seconds={this.state.seconds} />
       </div>
     );
