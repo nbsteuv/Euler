@@ -11,6 +11,11 @@ function getTime(){
 	return time / 1000;
 }
 
+function wrapFunction(code){
+	var wrappedCode = 'function wrappedFunction(){' + code + '} wrappedFunction()';
+	return wrappedCode;
+}
+
 //------------------------------------------------------------
 
 var app = express();
@@ -28,7 +33,7 @@ app.use(function(req, res, next){
 
 app.post('/sandbox', function(req, res){
 	var startTime = getTime();
-	s.run(req.body.code, function(output){
+	s.run(wrapFunction(req.body.code), function(output){
 		var endTime = getTime();
 		var seconds = endTime - startTime;
 		res.send({

@@ -3,11 +3,11 @@ var axios = require('axios');
 import brace from 'brace';
 import AceEditor from 'react-ace';
 require('brace/mode/sh');
-require('brace/theme/chrome');
+require('brace/theme/monokai');
 
 //TODO: abstract code call to API
 
-//TODO: abstract highlighter to API
+//TODO: make mode dependent on language for highlighter
 
 var CodeSandbox = React.createClass({
   handleSubmit: function(){
@@ -28,7 +28,7 @@ var CodeSandbox = React.createClass({
       <div>
         <AceEditor
           mode="sh"
-          theme="chrome"
+          theme="monokai"
           name="code"
           width="100%"
           maxLines={50}
