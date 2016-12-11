@@ -11,6 +11,8 @@ import CodeWindow from 'CodeWindow';
 
 //TODO: abstract generateSelectors and getProblemDetails functions into helper for reuse with Test component
 
+//TODO: filter languages by chosen problem and problem list by chosen language, depending on selectBy
+
 //TODO: loading a large array of problems with corresponding info might be a performance issue--load one at a time
 
 export var Exercise = React.createClass({
@@ -63,7 +65,7 @@ export var Exercise = React.createClass({
         return <CodeWindow problem={problemDetails} />
       }
     }
-    
+
     return (
       <div>
         <SelectBy />
