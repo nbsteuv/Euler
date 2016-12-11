@@ -6,28 +6,36 @@ export var problemsReducer = (state = [
     imageFile: '/images/problems/1.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
-    languages: ['php', 'javascript', 'csharp']
+    languages: ['php', 'javascript', 'csharp'],
+    answer: 10,
+    seconds: 25,
   },
   {
     id: 2,
     imageFile: '/images/problems/2.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
-    languages: ['php', 'javascript', 'csharp']
+    languages: ['php', 'javascript', 'csharp'],
+    answer: 10,
+    seconds: 25,
   },
   {
     id: 3,
     imageFile: '/images/problems/3.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
-    languages: ['php', 'javascript', 'csharp']
+    languages: ['php', 'javascript', 'csharp'],
+    answer: 10,
+    seconds: 25,
   },
   {
     id: 4,
     imageFile: '/images/problems/4.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
-    languages: ['php', 'javascript', 'csharp']
+    languages: ['php', 'javascript', 'csharp'],
+    answer: 10,
+    seconds: 25,
   },
 ], action) => {
   switch(action.type){
