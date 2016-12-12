@@ -3,7 +3,7 @@
 export var problemsReducer = (state = [
   {
     id: 1,
-    imageFile: '/images/languages/js.jpg',
+    imageFile: '/images/problems/1.jpg',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp'],
@@ -12,7 +12,7 @@ export var problemsReducer = (state = [
   },
   {
     id: 2,
-    imageFile: 'images/problems/2.png',
+    imageFile: '/images/problems/2.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp'],
@@ -21,7 +21,7 @@ export var problemsReducer = (state = [
   },
   {
     id: 3,
-    imageFile: 'public/images/problems/3.png',
+    imageFile: '/images/problems/3.png',
     currentCode: 'Current test code',
     codeHistory: ['Current code', 'Old code'],
     languages: ['php', 'javascript', 'csharp'],
