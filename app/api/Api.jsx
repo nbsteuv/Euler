@@ -19,3 +19,28 @@ export var filterProblemsByLanguage = (languageName, problems) => {
   });
   return availableProblems
 }
+
+export var generateSelectors = (selectBy, problemSelector, selectedProblem, problemImage, languageSelector, selectedLanguage) => {
+  switch(selectBy){
+    case 'Problem':
+      var selectors = [problemSelector];
+      if(selectedProblem){
+        selectors.push(problemImage);
+        selectors.push(languageSelector);
+      }
+      return selectors.map((selector) => {
+        return selector;
+      });
+    case 'Language':
+      var selectors = [languageSelector];
+      if(selectedLanguage){
+        selectors.push(problemSelector);
+        if(selectedProblem){
+          selectors.push(problemImage);
+        }
+      }
+      return selectors.map((selector) => {
+        return selector;
+      });
+  }
+}
