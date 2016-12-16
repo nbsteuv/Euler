@@ -1,5 +1,6 @@
 var React = require('react');
 var {connect} = require('react-redux');
+var API = require('Api');
 
 //TODO: find out if there's a performance difference between import and require--only import when necessary with connect, or switch all?
 
@@ -32,8 +33,9 @@ export var Exercise = React.createClass({
       var problemImage = <ProblemImage key="problemImage" imageFile={problemDetails.imageFile} />;
     }
 
+    var languageList = selectedProblem ? API.filterLanguagesByProblem(problemDetails, languages) : languages;
     var problemSelector = <ProblemSelector key="problemSelector" problemList={problems} selectedProblem={selectedProblem} />;
-    var languageSelector = <LanguageSelector key="languageSelector" languageList={languages} selectedLanguage={selectedLanguage} />;
+    var languageSelector = <LanguageSelector key="languageSelector" languageList={languageList} selectedLanguage={selectedLanguage} />;
 
     var generateSelectors = () => {
       switch(selectBy){
