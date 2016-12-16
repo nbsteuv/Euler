@@ -12,3 +12,10 @@ export var filterLanguagesByProblem = (problem, languages) => {
   });
   return availableLanguages;
 }
+
+export var filterProblemsByLanguage = (languageName, problems) => {
+  var availableProblems = problems.filter((problem) => {
+    return problem.languages.indexOf(languageName) !== -1;
+  });
+  return availableProblems
+}

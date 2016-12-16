@@ -20,21 +20,14 @@ export var Exercise = React.createClass({
   render: function(){
     var {problems, languages, selectBy, selectedProblem, selectedLanguage, selectByOptions} = this.props;
 
-    // var getProblemDetails = () => {
-    //   var problemDetailsArray = problems.filter((problem) => {
-    //     return problem.id == selectedProblem;
-    //   });
-    //   var problemDetails = problemDetailsArray[0];
-    //   return problemDetails;
-    // }
-
     if(selectedProblem){
       var problemDetails = API.getProblemDetails(selectedProblem, problems);
       var problemImage = <ProblemImage key="problemImage" imageFile={problemDetails.imageFile} />;
     }
 
     var languageList = selectedProblem ? API.filterLanguagesByProblem(problemDetails, languages) : languages;
-    var problemSelector = <ProblemSelector key="problemSelector" problemList={problems} selectedProblem={selectedProblem} />;
+    var problemList = selectedLanguage ? API.filterProblemsByLanguage(selectedLanguage, problems) : problems;
+    var problemSelector = <ProblemSelector key="problemSelector" problemList={problemList} selectedProblem={selectedProblem} />;
     var languageSelector = <LanguageSelector key="languageSelector" languageList={languageList} selectedLanguage={selectedLanguage} />;
 
     var generateSelectors = () => {
