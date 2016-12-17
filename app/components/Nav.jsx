@@ -14,6 +14,9 @@ var Nav = React.createClass({
            <li>
              <Link to="/test" activeClassName="active-link">Language Tests</Link>
            </li>
+           <li>
+             <Link to="/manager" activeClassName="active-link">Problem Manager</Link>
+           </li>
          </ul>
        </div>
        <div className="top-bar-right">

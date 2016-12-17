@@ -13,6 +13,7 @@ store.subscribe(() => {
 var EulerApp = require('EulerApp');
 import Exercise from 'Exercise';
 import Test from 'Test';
+import Manager from 'Manager';
 
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Route path="/" component={EulerApp}>
         <IndexRoute component={Exercise} />
         <Route path="/test" component={Test} />
+        <Route path="/manager" component={Manager} />
       </Route>
     </Router>
   </Provider>,
