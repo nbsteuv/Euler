@@ -23,4 +23,14 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
+  it('should generate SET_SELECTED_LANGUAGE action', () => {
+    var languageName = 'Test language';
+    var action = {
+      type: 'SET_SELECTED_LANGUAGE',
+      languageName
+    }
+    var res = actions.setSelectedLanguage(action.languageName);
+    expect(res).toEqual(action);
+  });
+
 });
