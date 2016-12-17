@@ -26,4 +26,8 @@ describe('CodeSandbox', () => {
       expect(submitNode.length).toBe(1);
     });
   });
+
+  describe('Submit handling', () => {
+    //TODO: figure out how to test API runCode call with spy
+  });
 });
