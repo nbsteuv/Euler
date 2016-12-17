@@ -36,4 +36,20 @@ describe('API', () => {
     expect(res).toEqual([languages[0]]);
   });
 
+  it('should filter problem list by given language', () => {
+    var languageName = 'testLanguage3';
+    var problems = [
+      {
+        id: 5,
+        languages: ['testLanguage1', 'testLanguage2', 'testLanguage3']
+      },
+      {
+        id: 7,
+        languages: ['testLanguage5']
+      }
+    ];
+    var res = API.filterProblemsByLanguage(languageName, problems);
+    expect(res).toEqual([problems[0]]);
+  });
+
 });
