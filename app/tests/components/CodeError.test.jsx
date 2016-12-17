@@ -17,4 +17,10 @@ describe('Code Error', () => {
     var errorText = $el.find('.code-error-text').text();
     expect(errorText).toBe("Test error");
   });
+
+  it('should render null when no error message exists', () => {
+    var codeError = TestUtils.renderIntoDocument(<CodeError error={undefined} />);
+    var $el = $(ReactDOM.findDOMNode(codeError));
+    expect($el.length).toBe(0);
+  });
 })
