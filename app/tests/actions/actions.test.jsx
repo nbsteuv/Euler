@@ -33,11 +33,19 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
-  it('should generate CLEAR_SELECTIONS action', () => {
+  it('should generate CLEAR_PROBLEM_SELECTION action', () => {
     var action = {
-      type: 'CLEAR_SELECTIONS'
+      type: 'CLEAR_PROBLEM_SELECTION'
     }
-    var res = actions.clearSelections();
+    var res = actions.clearProblemSelection();
+    expect(res).toEqual(action);
+  });
+
+  it('should generate CLEAR_LANGUAGE_SELECTION action', () => {
+    var action = {
+      type: 'CLEAR_LANGUAGE_SELECTION'
+    }
+    var res = actions.clearLanguageSelection();
     expect(res).toEqual(action);
   });
 

@@ -87,7 +87,7 @@ export var selectedProblemReducer = (state = '', action) => {
   switch(action.type){
     case 'SET_SELECTED_PROBLEM':
       return action.problemId;
-    case 'CLEAR_SELECTIONS':
+    case 'CLEAR_PROBLEM_SELECTION':
       return '';
     default:
       return state;
@@ -98,7 +98,7 @@ export var selectedLanguageReducer = (state = '', action) => {
   switch(action.type){
     case 'SET_SELECTED_LANGUAGE':
       return action.languageName;
-    case 'CLEAR_SELECTIONS':
+    case 'CLEAR_LANGUAGE_SELECTION':
       return '';
     default:
       return state;

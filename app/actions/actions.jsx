@@ -21,8 +21,14 @@ export var setSelectedLanguage = (languageName) => {
   }
 }
 
-export var clearSelections = () => {
+export var clearProblemSelection = () => {
   return {
-    type: 'CLEAR_SELECTIONS',
+    type: 'CLEAR_PROBLEM_SELECTION',
+  }
+}
+
+export var clearLanguageSelection = () => {
+  return {
+    type: 'CLEAR_LANGUAGE_SELECTION',
   }
 }
