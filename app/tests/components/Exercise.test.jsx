@@ -84,7 +84,13 @@ describe('Exercise', () => {
     it('should render language selector if selectBy = Problem and problem is selected', () => {
       var store = configure({
         selectBy: 'Problem',
-        selectedProblem: '1775'
+        selectedProblem: '1775',
+        problems: [
+          {
+            id: 1775,
+            languages: 'test language'
+          }
+        ]
       });
       var exercise = TestUtils.renderIntoDocument(
         <Provider store={store}>
