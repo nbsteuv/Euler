@@ -16,4 +16,10 @@ describe('CodeResult', () => {
     var $el = $(ReactDOM.findDOMNode(codeResult));
     expect($el.length).toBe(1);
   });
+
+  it('should not render component when answer and second props are missing', () => {
+    var codeResult = TestUtils.renderIntoDocument(<CodeResult answer={undefined} seconds={undefined} />);
+    var $el = $(ReactDOM.findDOMNode(codeResult));
+    expect($el.length).toBe(0);
+  });
 });
