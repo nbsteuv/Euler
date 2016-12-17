@@ -33,4 +33,12 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
+  it('should generate CLEAR_SELECTIONS action', () => {
+    var action = {
+      type: 'CLEAR_SELECTIONS'
+    }
+    var res = actions.clearSelections();
+    expect(res).toEqual(action);
+  });
+
 });
