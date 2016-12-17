@@ -1,4 +1,5 @@
 var React = require('react');
+var {connect} = require('react-redux');
 
 var Manager = React.createClass({
   render: function(){
@@ -10,4 +11,8 @@ var Manager = React.createClass({
   }
 });
 
-module.exports = Manager;
+export default connect(
+  (state) => {
+    return state;
+  }
+)(Manager);
