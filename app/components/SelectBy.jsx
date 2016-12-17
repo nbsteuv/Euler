@@ -7,9 +7,9 @@ var actions = require('actions');
 
 export var SelectBy = React.createClass({
   componentDidUpdate: function(){
-    console.log('Did update');
     var {dispatch} = this.props;
-    dispatch(actions.clearSelections());
+    dispatch(actions.clearProblemSelection());
+    dispatch(actions.clearLanguageSelection());
   },
   render: function(){
     var {selectByOptions, selectBy, dispatch} = this.props;

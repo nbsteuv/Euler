@@ -7,6 +7,9 @@ export var ProblemSelector = React.createClass({
   handleSelect : function(e){
     var {dispatch} = this.props
     var problemId = e.target.value;
+    if(this.props.selectCallback){
+      dispatch(this.props.selectCallback());
+    }
     dispatch(actions.setSelectedProblem(problemId));
   },
   render: function(){

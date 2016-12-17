@@ -6,6 +6,7 @@ var actions = require('actions');
 export var LanguageSelector = React.createClass({
   render: function(){
     var {languageList, selectedLanguage, dispatch} = this.props;
+    var selectCallback = this.props.selectCallback;
     var renderLanguageList = function(){
       return languageList.map((language) => {
         var className = language.name == selectedLanguage ? 'language-logo language-active' : 'language-logo';
@@ -17,6 +18,9 @@ export var LanguageSelector = React.createClass({
               backgroundRepeat: 'no-repeat'
             }
           } onClick={() => {
+            if(selectCallback){
+              dispatch(selectCallback());
+            }
             dispatch(actions.setSelectedLanguage(language.name));
           }}></span>
       });
