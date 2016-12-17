@@ -88,6 +88,18 @@ describe('API', () => {
       var expectedSelectors = [languageSelector];
       expect(selectors).toEqual(expectedSelectors);
     });
+
+    it('should generate language and problem selectors when selectBy = language and language is selected', () => {
+      var selectBy = 'Language';
+      var problemSelector = 'ProblemSelector';
+      var selectedProblem = undefined;
+      var problemImage = 'ProblemImage';
+      var languageSelector = 'LanguageSelector';
+      var selectedLanguage = 'LanguageSelection';
+      var selectors = API.generateSelectors(selectBy, problemSelector, selectedProblem, problemImage, languageSelector, selectedLanguage);
+      var expectedSelectors = [languageSelector, problemSelector];
+      expect(selectors).toEqual(expectedSelectors);
+    });
   });
 
 });
