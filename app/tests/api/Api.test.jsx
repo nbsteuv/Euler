@@ -52,4 +52,18 @@ describe('API', () => {
     expect(res).toEqual([problems[0]]);
   });
 
+  describe('Generate selectors function', () => {
+    it('should generate only problem selector when selectBy = problem and problem is not selected', () => {
+      var selectBy = 'Problem';
+      var problemSelector = 'ProblemSelector';
+      var selectedProblem = undefined;
+      var problemImage = 'ProblemImage';
+      var languageSelector = 'LanguageSelector';
+      var selectedLanguage = undefined;
+      var selectors = API.generateSelectors(selectBy, problemSelector, selectedProblem, problemImage, languageSelector, selectedLanguage);
+      var expectedSelectors = ['ProblemSelector'];
+      expect(selectors).toEqual(expectedSelectors);
+    });
+  });
+
 });
