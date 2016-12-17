@@ -1,3 +1,5 @@
+var axios = require('axios');
+
 export var getProblemDetails = (problemId, problems) => {
   var selectedProblemDetails = problems.filter((problem) => {
     return problem.id == problemId;
@@ -43,4 +45,17 @@ export var generateSelectors = (selectBy, problemSelector, selectedProblem, prob
         return selector;
       });
   }
+}
+
+//Pass language variable
+export var runCode = (code) => {
+  return axios.post('/sandbox', {
+    code: code
+  })
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }

@@ -5,7 +5,7 @@ import AceEditor from 'react-ace';
 require('brace/mode/sh');
 require('brace/theme/monokai');
 
-//TODO: abstract code call to API
+var API = require('Api');
 
 //TODO: make mode dependent on language for highlighter
 
@@ -15,17 +15,11 @@ var CodeSandbox = React.createClass({
   },
   handleSubmit: function(){
     var code = this.refs.codeInput.editor.getValue();
-    console.log(code)
-    axios.post('/sandbox', {
-      code: code
-    })
-      .then((response) => {
-        console.log(response);
-        this.setCodeResults(response.data.answer, response.data.seconds);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+    API.runCode(code).then((response) => {
+      this.setCodeResults(response.data.answer, response.data.seconds);
+    }, (e) => {
+      console.log(e);
+    });
   },
   render: function(){
     return (
