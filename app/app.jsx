@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, browserHistory} = require('react-router');
+var {Route, Router, IndexRoute, browserHistory, hashHistory} = require('react-router');
 var {Provider} = require('react-redux');
 
 var store = require('configureStore').configure();
@@ -22,7 +22,7 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path="/" component={EulerApp}>
         <IndexRoute component={Exercise} />
         <Route path="/test" component={Test} />
