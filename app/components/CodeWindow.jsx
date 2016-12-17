@@ -1,5 +1,4 @@
 var React = require('react');
-var {connect} = require('react-redux');
 
 var CodeInstructions = require('CodeInstructions');
 var CodeSandbox = require('CodeSandbox');
@@ -8,7 +7,7 @@ var CodeError = require('CodeError');
 
 //Trying a different pattern for conditional rendering in CodeResult component--conditional rendering happens within component, not within render method of parent.
 
-export var CodeWindow = React.createClass({
+var CodeWindow = React.createClass({
   getInitialState: function(){
     return {
       answer: undefined,
@@ -46,4 +45,4 @@ export var CodeWindow = React.createClass({
   }
 });
 
-export default connect()(CodeWindow);
+module.exports = CodeWindow;

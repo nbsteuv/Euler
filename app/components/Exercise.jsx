@@ -9,7 +9,7 @@ import SelectBy from 'SelectBy';
 import ProblemSelector from 'ProblemSelector';
 import LanguageSelector from 'LanguageSelector';
 var ProblemImage = require('ProblemImage');
-import CodeWindow from 'CodeWindow';
+var CodeWindow = require('CodeWindow');
 
 //TODO: loading a large array of problems with corresponding info might be a performance issue--load one at a time if necessary
 
