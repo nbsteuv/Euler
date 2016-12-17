@@ -6,7 +6,7 @@ var CodeError = React.createClass({
     if(error != undefined){
       return (
         <div>
-          <h3>{error}</h3>
+          <h3 className="code-error-text" >{error}</h3>
         </div>
       );
     } else {
