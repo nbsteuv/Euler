@@ -18,5 +18,12 @@ describe('CodeSandbox', () => {
       var aceEditors = TestUtils.scryRenderedComponentsWithType(codeSandbox, AceEditor);
       expect(aceEditors.length).toBe(1);
     });
+
+    it('should render node with code-submit class', () => {
+      var codeSandbox = TestUtils.renderIntoDocument(<CodeSandbox />);
+      var $el = $(ReactDOM.findDOMNode(codeSandbox));
+      var submitNode = $el.find('.code-submit');
+      expect(submitNode.length).toBe(1);
+    });
   });
 });

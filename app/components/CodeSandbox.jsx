@@ -38,7 +38,7 @@ var CodeSandbox = React.createClass({
             editor.getSession().setUseWrapMode(true);
           }}
         />
-      <p onClick={this.handleSubmit}>Submit</p>
+      <p className="code-submit" onClick={this.handleSubmit}>Submit</p>
     </div>
     )
   }
