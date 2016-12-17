@@ -114,4 +114,12 @@ describe('API', () => {
     });
   });
 
+  it('should return the return value of code text', () => {
+    var code = 'return 10';
+    API.runCode(code).then((response) => {
+      returnValue = response.data.answer;
+      expect(returnValue).toEqual(10);
+    });
+  });
+
 });
