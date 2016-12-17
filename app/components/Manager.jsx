@@ -5,7 +5,7 @@ var Manager = React.createClass({
   render: function(){
     return (
       <div>
-        <p>Manager test</p>
+        <h3 className="manager-title">Problem Manager</h3>
       </div>
     );
   }
