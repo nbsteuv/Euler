@@ -4,7 +4,7 @@ var {connect} = require('react-redux');
 var actions = require('actions');
 var ManagerProblemFocusView = require('ManagerProblemFocusView');
 
-var ManagerProblemView = React.createClass({
+export var ManagerProblemView = React.createClass({
   render: function(){
     var {problem, selectedProblemView, dispatch} = this.props;
     var renderFocusView = () => {
@@ -13,7 +13,7 @@ var ManagerProblemView = React.createClass({
       }
     }
     return (
-      <div onClick={ () => { dispatch(actions.selectProblemView(problem.id)) }}>
+      <div className="manager-problem-view" onClick={ () => { dispatch(actions.selectProblemView(problem.id)) }}>
         <p>{problem.id}</p>
         { renderFocusView() }
       </div>
