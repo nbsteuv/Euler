@@ -49,4 +49,12 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
+  it('should generate SELECT_PROBLEM_VIEW action', () => {
+    var action = {
+      type: 'SELECT_PROBLEM_VIEW',
+      problemId: 6
+    }
+    var res = actions.selectProblemView(6);
+    expect(res).toEqual(action);
+  })
 });
