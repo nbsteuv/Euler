@@ -3,9 +3,10 @@ var {connect} = require('react-redux');
 
 var ManagerProblemView = React.createClass({
   render: function(){
+    var {problem} = this.props;
     return (
       <div>
-        <p>ProblemView Test</p>
+        <p>{problem.id}</p>
       </div>
     )
   }
