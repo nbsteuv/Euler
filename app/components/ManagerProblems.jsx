@@ -3,7 +3,7 @@ var {connect} = require('react-redux');
 
 import ManagerProblemView from 'ManagerProblemView';
 
-var ManagerProblems = React.createClass({
+export var ManagerProblems = React.createClass({
   render: function(){
     var {problems} = this.props;
     var renderProblemViews = () => {
