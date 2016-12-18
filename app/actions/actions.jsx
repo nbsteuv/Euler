@@ -32,3 +32,10 @@ export var clearLanguageSelection = () => {
     type: 'CLEAR_LANGUAGE_SELECTION',
   }
 }
+
+export var selectProblemView = (problemId) => {
+  return {
+    type: 'SELECT_PROBLEM_VIEW',
+    problemId
+  }
+}

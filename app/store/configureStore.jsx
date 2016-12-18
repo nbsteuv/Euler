@@ -1,5 +1,5 @@
 var redux = require('redux');
-var {problemsReducer, languagesReducer, selectByReducer, selectedProblemReducer, selectedLanguageReducer, selectByOptionsReducer} = require('reducers');
+var {problemsReducer, languagesReducer, selectByReducer, selectedProblemReducer, selectedLanguageReducer, selectByOptionsReducer, selectedProblemViewReducer} = require('reducers');
 
 export var configure = (initialState ={}) => {
 
@@ -9,7 +9,8 @@ export var configure = (initialState ={}) => {
     selectBy: selectByReducer,
     selectByOptions: selectByOptionsReducer,
     selectedProblem: selectedProblemReducer,
-    selectedLanguage: selectedLanguageReducer
+    selectedLanguage: selectedLanguageReducer,
+    selectedProblemView: selectedProblemViewReducer
   });
 
   var store = redux.createStore(reducer, initialState);
