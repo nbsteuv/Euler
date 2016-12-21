@@ -2,14 +2,14 @@ var React = require('react');
 var {connect} = require('react-redux');
 
 var actions = require('actions');
-var ManagerProblemFocusView = require('ManagerProblemFocusView');
+import ManagerProblemFocusView from 'ManagerProblemFocusView';
 
 export var ManagerProblemView = React.createClass({
   render: function(){
     var {problem, selectedProblemView, dispatch} = this.props;
     var renderFocusView = () => {
       if(selectedProblemView == problem.id){
-        return (<ManagerProblemFocusView />);
+        return (<ManagerProblemFocusView problem={problem} />);
       }
     }
     return (
