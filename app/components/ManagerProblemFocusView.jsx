@@ -6,7 +6,7 @@ import LanguageSelector from 'LanguageSelector';
 
 var ManagerProblemFocusView = React.createClass({
   render: function(){
-    var {problem, languages} = this.props;
+    var {problem, languages, selectedLanguage} = this.props;
     var currentLanguages = API.filterLanguagesByProblem(problem, languages);
     var supportedLanguages = languages.filter((language) => {
       return (currentLanguages.indexOf(language) == -1);
@@ -19,8 +19,8 @@ var ManagerProblemFocusView = React.createClass({
             <td><p>Other Supported Languages</p></td>
           </tr>
           <tr>
-            <td><LanguageSelector languageList={currentLanguages} /></td>
-            <td><LanguageSelector languageList={supportedLanguages} /></td>
+            <td><LanguageSelector languageList={currentLanguages} selectedLanguage={selectedLanguage} /></td>
+            <td><LanguageSelector languageList={supportedLanguages} selectedLanguage={selectedLanguage} /></td>
           </tr>
         </table>
       </div>

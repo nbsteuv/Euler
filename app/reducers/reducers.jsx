@@ -104,16 +104,3 @@ export var selectedLanguageReducer = (state = '', action) => {
       return state;
   }
 }
-
-export var selectedProblemViewReducer = (state = '', action) => {
-  switch(action.type){
-    case 'SELECT_PROBLEM_VIEW':
-      if(state == action.problemId){
-        return '';
-      } else {
-        return action.problemId;
-      }
-    default:
-      return state;
-  }
-}
