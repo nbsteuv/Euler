@@ -13,8 +13,14 @@ var ManagerProblemFocusView = React.createClass({
     });
     return (
       <div className="manager-problem-focus-view">
-        <LanguageSelector languageList={currentLanguages} />
-        <LanguageSelector languageList={supportedLanguages} />
+        <div className="focus-view-language-list">
+          <p>Currently Used Languages</p>
+          <LanguageSelector languageList={currentLanguages} />
+        </div>
+        <div className="focus-view-language-list">
+          <p>Other Supported Languages</p>
+          <LanguageSelector languageList={supportedLanguages} />
+        </div>
       </div>
     )
   }

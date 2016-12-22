@@ -49,6 +49,8 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
+//SELECT_PROBLEM_VIEW can be replaced with selectedProblem for manager, just like selectedLanguage--clear both on root page load
+
   it('should generate SELECT_PROBLEM_VIEW action', () => {
     var action = {
       type: 'SELECT_PROBLEM_VIEW',
