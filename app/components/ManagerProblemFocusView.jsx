@@ -11,8 +11,10 @@ var ManagerProblemFocusView = React.createClass({
     var supportedLanguages = languages.filter((language) => {
       return (currentLanguages.indexOf(language) == -1);
     });
+    //TODO: Allow user to change answer from this screen
     return (
       <div className="manager-problem-focus-view">
+        <h3>Answer: {problem.answer} </h3>
         <table>
           <tr>
             <td><p>Currently Used Languages</p></td>
