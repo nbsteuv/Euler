@@ -13,7 +13,7 @@ export var ManagerProblemView = React.createClass({
       }
     }
     return (
-      <div className="manager-problem-view" onClick={ () => { dispatch(actions.setSelectedProblem(problem.id)) }}>
+      <div className="manager-problem-view" onClick={ () => { if(selectedProblem != problem.id) {dispatch(actions.setSelectedProblem(problem.id)) }}}>
         <p>{problem.id}</p>
         { renderFocusView() }
       </div>
