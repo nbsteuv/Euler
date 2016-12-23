@@ -25,8 +25,6 @@ ReactDOM.render(
     <Router history={hashHistory}>
       <Route path="/" component={EulerApp}>
         <IndexRoute component={Exercise} />
-        <Route path="/test" component={Test} />
-        <Route path="/manager" component={Manager} />
       </Route>
     </Router>
   </Provider>,
