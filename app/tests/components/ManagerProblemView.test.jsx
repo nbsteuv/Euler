@@ -47,13 +47,13 @@ describe('ManagerProblemView', () => {
     expect(managerProblemFocusViews.length).toBe(0);
   });
 
-  it('should dispatch SELECT_PROBLEM_VIEW action when clicked', () => {
+  it('should dispatch SET_SELECTED_PROBLEM action when clicked', () => {
     var problemId = 37;
     var problem = {
       id: 37
     }
     var action = {
-      type: 'SELECT_PROBLEM_VIEW',
+      type: 'SET_SELECTED_PROBLEM',
       problemId
     }
     var spy = expect.createSpy();
