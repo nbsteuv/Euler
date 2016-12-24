@@ -20,7 +20,7 @@ describe('ManagerProblems', () => {
       {id: 2},
       {id: 3}
     ];
-    var store = configure(store);
+    var store = configure();
     var managerProblems = TestUtils.renderIntoDocument(
       <Provider store={store} >
         <ManagerProblems problems={problems} />
