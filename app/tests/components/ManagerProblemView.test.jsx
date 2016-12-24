@@ -37,6 +37,7 @@ describe('ManagerProblemView', () => {
       id: 5
     }
     var selectedProblem = 7;
+    var store = configure({selectedProblem: selectedProblem});
     var managerProblemView = TestUtils.renderIntoDocument(
       <Provider store={store}>
         <ManagerProblemView problem={problem} selectedProblem={selectedProblem} />
