@@ -3,9 +3,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var $ = require('jQuery');
 var TestUtils = require('react-addons-test-utils');
+var {Provider} = require('react-redux');
 
+import {configure} from 'configureStore';
 import {ManagerProblemView} from 'ManagerProblemView';
-var ManagerProblemFocusView = require('ManagerProblemFocusView');
+import ManagerProblemFocusView from 'ManagerProblemFocusView';
 
 describe('ManagerProblemView', () => {
   it('should exist', () => {
@@ -14,11 +16,19 @@ describe('ManagerProblemView', () => {
 
   it('should render ManagerProblemFocusView if selected', () => {
     var problem = {
-      id: 5
+      id: 5,
+      languages: ['php']
     }
     var selectedProblem = 5;
-    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblem={selectedProblem} />);
+    var store = configure({selectedProblem: selectedProblem});
+    var managerProblemView = TestUtils.renderIntoDocument(
+      <Provider store={store}>
+        <ManagerProblemView problem={problem} selectedProblem={selectedProblem} />
+      </Provider>
+    );
+    console.log(managerProblemView);
     var managerProblemFocusViews = TestUtils.scryRenderedComponentsWithType(managerProblemView, ManagerProblemFocusView);
+    console.log(managerProblemFocusViews);
     expect(managerProblemFocusViews.length).toBe(1);
   });
 
@@ -27,7 +37,11 @@ describe('ManagerProblemView', () => {
       id: 5
     }
     var selectedProblem = 7;
-    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblem={selectedProblem} />);
+    var managerProblemView = TestUtils.renderIntoDocument(
+      <Provider store={store}>
+        <ManagerProblemView problem={problem} selectedProblem={selectedProblem} />
+      </Provider>
+    );
     var managerProblemFocusViews = TestUtils.scryRenderedComponentsWithType(managerProblemView, ManagerProblemFocusView);
     expect(managerProblemFocusViews.length).toBe(0);
   });
