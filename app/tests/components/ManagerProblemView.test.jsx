@@ -16,8 +16,8 @@ describe('ManagerProblemView', () => {
     var problem = {
       id: 5
     }
-    var selectedProblemView = 5;
-    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblemView={selectedProblemView} />);
+    var selectedProblem = 5;
+    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblem={selectedProblem} />);
     var managerProblemFocusViews = TestUtils.scryRenderedComponentsWithType(managerProblemView, ManagerProblemFocusView);
     expect(managerProblemFocusViews.length).toBe(1);
   });
@@ -26,8 +26,8 @@ describe('ManagerProblemView', () => {
     var problem = {
       id: 5
     }
-    var selectedProblemView = 7;
-    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblemView={selectedProblemView} />);
+    var selectedProblem = 7;
+    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblem={selectedProblem} />);
     var managerProblemFocusViews = TestUtils.scryRenderedComponentsWithType(managerProblemView, ManagerProblemFocusView);
     expect(managerProblemFocusViews.length).toBe(0);
   });
@@ -42,7 +42,7 @@ describe('ManagerProblemView', () => {
       problemId
     }
     var spy = expect.createSpy();
-    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblemView="" dispatch={spy} />);
+    var managerProblemView = TestUtils.renderIntoDocument(<ManagerProblemView problem={problem} selectedProblem="" dispatch={spy} />);
     var problemViewDiv = TestUtils.scryRenderedDOMComponentsWithTag(managerProblemView, 'div')[0];
     TestUtils.Simulate.click(problemViewDiv);
     expect(spy).toHaveBeenCalledWith(action);
