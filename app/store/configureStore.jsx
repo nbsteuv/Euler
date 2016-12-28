@@ -1,7 +1,7 @@
 var redux = require('redux');
 var {problemsReducer, languagesReducer, selectByReducer, selectedProblemReducer, selectedLanguageReducer, selectByOptionsReducer} = require('reducers');
 
-export var configure = (initialState ={}) => {
+export var configure = (initialState = {}) => {
 
   var reducer = redux.combineReducers({
     problems: problemsReducer,
