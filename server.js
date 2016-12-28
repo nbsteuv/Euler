@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 //Javascript sandbox functions--abstract to separate class file and instantiate with Javascript module information
 var Sandbox = require('sandbox');
 var s = new Sandbox();
+s.options.timeout = 20000;
 
 function getTime(){
 	var date = new Date();
