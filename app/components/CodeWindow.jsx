@@ -22,22 +22,26 @@ var CodeWindow = React.createClass({
       error: error
     });
   },
-  setCodeResults: function(answer, seconds){
+  setCodeResults: function(answer, seconds, code){
+    this.setState({
+      code: code
+    });
     if(answer == 10){
       this.setState({
         answer: answer,
         seconds: seconds,
-        error: undefined
+        error: undefined,
       });
     } else {
       this.setError('The return value of your answer (' + answer + ') does not match the correct answer for the problem (' + 10 + '). Please try again.')
     }
   },
   render: function(){
+    var initialCode = this.state.code ? this.state.code : "Type your code here.";
     return (
       <div>
         <CodeInstructions />
-        <CodeSandbox setCodeResults={this.setCodeResults} />
+        <CodeSandbox setCodeResults={this.setCodeResults} code={initialCode} />
         <CodeResult answer={this.state.answer} seconds={this.state.seconds} />
         <CodeError error={this.state.error} />
       </div>

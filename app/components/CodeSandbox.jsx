@@ -9,13 +9,13 @@ var API = require('Api');
 //TODO: make mode dependent on language for highlighter
 
 var CodeSandbox = React.createClass({
-  setCodeResults: function(answer, seconds){
-    this.props.setCodeResults(answer, seconds);
+  setCodeResults: function(answer, seconds, code){
+    this.props.setCodeResults(answer, seconds, code);
   },
   handleSubmit: function(){
     var code = this.refs.codeInput.editor.getValue();
     API.runCode(code).then((response) => {
-      this.setCodeResults(response.data.answer, response.data.seconds);
+      this.setCodeResults(response.data.answer, response.data.seconds, code);
     }, (e) => {
       console.log(e);
     });
@@ -31,7 +31,7 @@ var CodeSandbox = React.createClass({
           maxLines={Infinity}
           ref="codeInput"
           fontSize={18}
-          value="#type your code here"
+          value={this.props.code}
           editorProps={{$blockScrolling: Infinity}}
           onLoad={(editor) => {
             editor.focus();
