@@ -48,16 +48,28 @@ export var runTests = () => {
 }
 
 export var updateProblem = (problemId, name, language, answer, currentCode) => {
-  databaseRef.child('problems/' + problemId).update({
+  return databaseRef.child('problems/' + problemId).update({
     id: problemId,
     answer: answer,
     imageFile: '/images/problems/' + problemId + '.jpg',
     name: name
-  });
-
-  databaseRef.child('problems/' + problemId + '/currentCode/' + language).update({
-    code : currentCode
-  });
-
-  databaseRef.child('problems/' + problemId + '/languages').push(language);
+  })
+  .then(() => {
+    return databaseRef.child('problems/' + problemId + '/currentCode/' + language).update({
+      code : currentCode
+    })
+    .then(() => {
+      return databaseRef.child('problems/' + problemId + '/languages').push(
+        language
+      ).then(() => {
+        return "Success";
+      }, (e) => {
+        console.log(e);
+      })
+    }, (e) => {
+      console.log(e)
+    })
+  }, (e) => {
+    console.log(e);
+  })
 }

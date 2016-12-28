@@ -13,8 +13,12 @@ var BasicCodeUploader = React.createClass({
     var language = this.refs.language.value;
     var answer = this.refs.answer.value;
     var currentCode = this.refs.codeInput.editor.getValue();
-    FirebaseAPI.updateProblem(problemId, name, language, answer, currentCode).then(() => {
-      this.refs.codeInput.editor.value = '';
+    FirebaseAPI.updateProblem(problemId, name, language, answer, currentCode).then((data) => {
+      this.refs.codeInput.editor.setValue('Successful add. Enter next code.');
+      var newProblemId = parseInt(problemId) + 1;
+      this.refs.problemId.value = newProblemId.toString();
+      this.refs.problemName.value = '';
+      this.refs.answer.value = '';
     }, (e) => {
       console.log(e);
     })
