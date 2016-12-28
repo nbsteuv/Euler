@@ -23,6 +23,8 @@ import Exercise from 'Exercise';
 import Test from 'Test';
 import Manager from 'Manager';
 
+var BasicCodeUploader = require('BasicCodeUploader');
+
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
@@ -30,9 +32,10 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path="/" component={EulerApp}>
         <IndexRoute component={Exercise} />
+        <Route path="/codeupload" component={BasicCodeUploader} />
       </Route>
     </Router>
   </Provider>,
