@@ -47,10 +47,12 @@ export var runTests = () => {
 
 }
 
-export var updateProblem = (problemId, language, answer, currentCode) => {
+export var updateProblem = (problemId, name, language, answer, currentCode) => {
   databaseRef.child('problems/' + problemId).update({
     id: problemId,
-    answer: answer
+    answer: answer,
+    imageFile: '/images/problems/' + problemId + '.jpg',
+    name: name
   });
 
   databaseRef.child('problems/' + problemId + '/currentCode/' + language).update({
